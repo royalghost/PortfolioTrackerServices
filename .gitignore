@@ -1,1 +1,8 @@
 /target/
+
+#eclipse
+/.settings/
+
+#osx noise
+.DS_Store
+profile
