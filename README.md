@@ -26,7 +26,7 @@ http://localhost:8080/portfolios/
 # HTTP Get Details
 http://localhost:8080/portfolios/7
 
-#Response Payload
+# Response Payload
 Both POST Request and Response
 
 # Business Use Case
@@ -37,7 +37,7 @@ Each response will have an unique ID and both request and respose are stored in 
 # Software Design and Architecutre
 This simple servcies implemented demonstrated a service side of HTTP REST API implementation. 
 
-##Here are the high level details:
+## Here are the high level details:
 1. Spring Boot is used to create HTTP End Point through the Controller implementation [ PortfolioTrackerServices/src/main/java/com/portfolio/tracker/NetWorthTrackerController.java ] 
 2. Service and Database are separate components injected to the Controller through @Autowired Dependency Injection
 3. Redis is currently used as a persistent storage to store [ PortfolioTrackerServices/src/main/java/com/portfolio/tracker/PortfolioDatabaseRedis.java ]
@@ -46,6 +46,6 @@ This simple servcies implemented demonstrated a service side of HTTP REST API im
 [ PortfolioTrackerServices/src/test/java/com/portfolio/tracker/NetWorthTrackerControllerTest.java ]
 
 
-##Client Side
+## Client Side
 Client side app is developed using Angular JS 2. [Will be available soon]
 
