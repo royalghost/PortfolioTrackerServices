@@ -26,32 +26,32 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RestController(value = "/portfolios")
 public class NetWorthTrackerController {
-	
+
 	@Autowired
 	private PortfolioService portfolioService;
 	@Autowired
 	private PortfolioDatabase portfolioDatabase;
-    private final AtomicLong counter = new AtomicLong();
-    
-    @PostMapping(produces = "application/json", consumes = "application/json")
-    public ResponseEntity<PortfolioSummary> savePortfolio(@RequestBody Portfolio portfolio ) {
-    		//Calculate networth
-	    	PortfolioSummary portfolioSummary = portfolioService.calculateNetWorth(portfolio);
-	    	portfolioSummary.setId(counter.incrementAndGet());
-    		//Save the database
-    		portfolioDatabase.savePortfolio(portfolio, portfolioSummary);;
-    		
-    		return new ResponseEntity<PortfolioSummary>(portfolioSummary, HttpStatus.CREATED);
-    }
-    
-    @GetMapping(produces = "application/json")
-    public List<String> getAllPortfoliosSummary(){
-    		return portfolioDatabase.getAllPortfoliosSummary();
-    }
-    
-    @GetMapping(produces = "application/json", value="/portfolios/{id}")
-    public Map<String, String> getPortfoliosDetails(@PathVariable String id ){
-    		return portfolioDatabase.getPortfolioDetails(id);
-    }
-    
+	private final AtomicLong counter = new AtomicLong();
+
+	@PostMapping(produces = "application/json", consumes = "application/json")
+	public ResponseEntity<PortfolioSummary> savePortfolio(@RequestBody Portfolio portfolio) {
+		// Calculate networth
+		PortfolioSummary portfolioSummary = portfolioService.calculateNetWorth(portfolio);
+		portfolioSummary.setId(counter.incrementAndGet());
+		// Save the database
+		portfolioDatabase.savePortfolio(portfolio, portfolioSummary);
+
+		return new ResponseEntity<PortfolioSummary>(portfolioSummary, HttpStatus.CREATED);
+	}
+
+	@GetMapping(produces = "application/json")
+	public List<String> getAllPortfoliosSummary() {
+		return portfolioDatabase.getAllPortfoliosSummary();
+	}
+
+	@GetMapping(produces = "application/json", value = "/portfolios/{id}")
+	public Map<String, String> getPortfoliosDetails(@PathVariable String id) {
+		return portfolioDatabase.getPortfolioDetails(id);
+	}
+
 }
