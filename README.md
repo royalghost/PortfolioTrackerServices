@@ -38,11 +38,12 @@ Each response will have an unique ID and both request and respose are stored in 
 This simple servcies implemented demonstrated a service side of HTTP REST API implementation. 
 
 ##Here are the high level details:
-1. Spring Boot is used to create HTTP End Point through the Controller implementation
+1. Spring Boot is used to create HTTP End Point through the Controller implementation [ PortfolioTrackerServices/src/main/java/com/portfolio/tracker/NetWorthTrackerController.java ] 
 2. Service and Database are separate components injected to the Controller through @Autowired Dependency Injection
-3. Redis is currently used as a persistent storage to store
+3. Redis is currently used as a persistent storage to store [ PortfolioTrackerServices/src/main/java/com/portfolio/tracker/PortfolioDatabaseRedis.java ]
 4. Redis has two HashMap to store Request and Response as JSON string based on the ID created for each request
 5. JUnit and Mockito is use for Unit Testing
+[ PortfolioTrackerServices/src/test/java/com/portfolio/tracker/NetWorthTrackerControllerTest.java ]
 
 
 ##Client Side
