@@ -12,10 +12,10 @@ package com.portfolio.tracker;
 public class PortfolioSummary {
 	
 	private Long id;
-	private Long totalAssets;
-	private Long totalLiabilities;
+	private Double totalAssets;
+	private Double totalLiabilities;
 	
-	public PortfolioSummary(Long id, Long totalAssets, Long totalLiabilities) {
+	public PortfolioSummary(Long id, Double totalAssets, Double totalLiabilities) {
 		this.id = id;
 		this.totalAssets = totalAssets;
 		this.totalLiabilities = totalLiabilities;
@@ -29,15 +29,15 @@ public class PortfolioSummary {
 		this.id = id;
 	}
 	
-	public Long getTotalAssets() {
+	public Double getTotalAssets() {
 		return totalAssets;
 	}
 
-	public Long getTotalLiabilities() {
+	public Double getTotalLiabilities() {
 		return totalLiabilities;
 	}
 
-	public Long getNetWorth() {
+	public Double getNetWorth() {
 		return this.totalAssets - this.totalLiabilities;
 	}
 

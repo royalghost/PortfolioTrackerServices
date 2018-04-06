@@ -22,13 +22,13 @@ public class PortfolioServiceImp implements PortfolioService {
 	 */
 	public PortfolioSummary calculateNetWorth(Portfolio portfolio) {
     	
-		Long totalAssets = new Long(0);
+		Double totalAssets = new Double(0);
 		for (Account account : portfolio.getAssets()) {
 			if (account.getAmount() != null)
 				totalAssets += account.getAmount();
 		}
 		
-		Long totalLiabilities = new Long(0);
+		Double totalLiabilities = new Double(0);
 		for(Account account : portfolio.getLiabilities()) {
 			if (account.getAmount() != null) {
 				totalLiabilities += account.getAmount();

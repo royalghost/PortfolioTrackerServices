@@ -67,13 +67,13 @@ public class PortfolioServiceImplTest {
 	public void testCalculateNetWorth_WithValue() {
 		//Given
 		List<Account> assets = new ArrayList<Account>();
-		assets.add(new Account(new Long(1), "Asset1", new Long(1000), Currency.CAD, AccountType.LONG_TERM_ASSET));
-		assets.add(new Account(new Long(1), "Asset2", new Long(2000), Currency.CAD, AccountType.CASH_INVEST));
+		assets.add(new Account(new Long(1), "Asset1", new Double(1000), Currency.CAD, AccountType.LONG_TERM_ASSET));
+		assets.add(new Account(new Long(1), "Asset2", new Double(2000), Currency.CAD, AccountType.CASH_INVEST));
 		List<Account> liabilities = new ArrayList<Account>();
-		liabilities.add(new Account(new Long(1), "Liability1", new Long(500), Currency.CAD, AccountType.LONG_TERM_LIAB));
-		liabilities.add(new Account(new Long(1), "Liability2", new Long(300), Currency.CAD, AccountType.SHORT_TERM_LIAB));
+		liabilities.add(new Account(new Long(1), "Liability1", new Double(500), Currency.CAD, AccountType.LONG_TERM_LIAB));
+		liabilities.add(new Account(new Long(1), "Liability2", new Double(300), Currency.CAD, AccountType.SHORT_TERM_LIAB));
 		Portfolio portfolio = new Portfolio(assets, liabilities);
-		PortfolioSummary expectedPortfolioSummary = new PortfolioSummary(new Long(1), new Long(3000), new Long(800));
+		PortfolioSummary expectedPortfolioSummary = new PortfolioSummary(new Long(1), new Double(3000), new Double(800));
 		//When
 		PortfolioSummary actualResult = portfolioServiceMock.calculateNetWorth(portfolio);
 		//Then

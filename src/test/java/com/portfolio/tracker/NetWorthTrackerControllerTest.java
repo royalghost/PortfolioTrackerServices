@@ -27,9 +27,9 @@ public class NetWorthTrackerControllerTest {
 	
 	@InjectMocks
 	private NetWorthTrackerController netWorthTrackerControllerMock;
-	
+/*	
 	@Mock 
-	private PortfolioDatabase portfolioDB;
+	private PortfolioDatabase portfolioDB;*/
 	
 	@Mock
 	private PortfolioService portfolioService;
@@ -43,11 +43,11 @@ public class NetWorthTrackerControllerTest {
 	public void testNetWorthTracker() {
 		//Given
 		List<Account> assets = new ArrayList<Account>();
-		assets.add(new Account(new Long(1), "Asset1", new Long(1000), Currency.CAD, AccountType.LONG_TERM_ASSET));
-		assets.add(new Account(new Long(1), "Asset2", new Long(2000), Currency.CAD, AccountType.CASH_INVEST));
+		assets.add(new Account(new Long(1), "Asset1", new Double(1000), Currency.CAD, AccountType.LONG_TERM_ASSET));
+		assets.add(new Account(new Long(1), "Asset2", new Double(2000), Currency.CAD, AccountType.CASH_INVEST));
 		List<Account> liabilities = new ArrayList<Account>();
-		liabilities.add(new Account(new Long(1), "Liability1", new Long(500), Currency.CAD, AccountType.LONG_TERM_LIAB));
-		liabilities.add(new Account(new Long(1), "Liability2", new Long(300), Currency.CAD, AccountType.SHORT_TERM_LIAB));
+		liabilities.add(new Account(new Long(1), "Liability1", new Double(500), Currency.CAD, AccountType.LONG_TERM_LIAB));
+		liabilities.add(new Account(new Long(1), "Liability2", new Double(300), Currency.CAD, AccountType.SHORT_TERM_LIAB));
 		Portfolio portfolio = new Portfolio(assets, liabilities);
 		PortfolioSummary portfolioSummary = Mockito.mock(PortfolioSummary.class);
 		//When

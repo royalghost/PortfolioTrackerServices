@@ -11,14 +11,14 @@ public class Account {
 	
 	private Long id;
 	private String name;
-	private Long amount;
+	private Double amount;
 	private Currency currency;
 	private AccountType accountType;
 	
 	public Account() {
 	}
 	
-	public Account(Long id, String name, Long amount, Currency currency, AccountType accountType) {
+	public Account(Long id, String name, Double amount, Currency currency, AccountType accountType) {
 		this.id = id;
 		this.name = name;
 		this.amount = amount;
@@ -42,11 +42,11 @@ public class Account {
 		this.name = name;
 	}
 	
-	public Long getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 	
-	public void setAmount(Long amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 	

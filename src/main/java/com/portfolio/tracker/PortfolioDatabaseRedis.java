@@ -51,7 +51,7 @@ public class PortfolioDatabaseRedis implements PortfolioDatabase {
 		return connection.sync().hvals(PORTOFLIO_RESPONSE_MAP);
 	}
 
-	public Map<String, String> getPortfolioDetails(String id) {
+	public Map<String, String> getPortfolioDetails(final String id) {
 		StatefulRedisConnection<String, String> connection = getConnection();
 		Map<String, String> map = new HashMap<String, String>();
 		map.put(PORTFOLIO_REQUEST_DETAIL_KEY, connection.sync().hget(PORTFOLIO_REQUEST_MAP, id));
